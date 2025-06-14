@@ -1,10 +1,12 @@
 import koa from "koa";
 import Router from "koa-router";
 import auth from "./auth";
+import users from "./users";
 const api = new koa();
 const router = new Router();
 
 router.use("/", auth.routes());
+router.use("/", user.routes());
 
 api.use(router.routes());
 api.use(router.allowedMethods());
