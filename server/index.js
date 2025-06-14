@@ -6,6 +6,7 @@ import helmet from "koa-helmet";
 import stoppable from "stoppable";
 import { getArg } from "./utils/getArgs";
 import services from "./services";
+import { createDatabaseInstance } from "./databases/mongo";
 
 async function start() {
   const useHTTPS = false;
@@ -22,6 +23,7 @@ async function start() {
     const init = services[key];
     init(app, server);
   }
+  createDatabaseInstance(process.env.MONGO_URL);
   server.on("listening", () => {
     console.log("listening on port ", Port);
   });
