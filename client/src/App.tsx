@@ -6,6 +6,8 @@ import { loadUser } from "./context/user/userSlice";
 import Home from "./pages/home.tsx";
 import Product from "./pages/product.tsx";
 import Products from "./pages/products.tsx";
+import Login from "./pages/login.tsx";
+import Signup from "./pages/signup.tsx";
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -23,6 +25,8 @@ function App(): JSX.Element {
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
   );
