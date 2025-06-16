@@ -6,6 +6,7 @@ import Navbar from "../comp/navbar/Navbar";
 import Footer from "../comp/footer/Footer";
 
 const Product: React.FC = () => {
+  // pushing this to main
   return (
     <>
       <Navbar />
